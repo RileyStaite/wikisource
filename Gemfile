@@ -8,6 +8,8 @@ gem 'rails', '~> 5.2.6'
 
 gem 'cucumber'
 
+gem 'simplecov', require: false, group: :test
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
 end
