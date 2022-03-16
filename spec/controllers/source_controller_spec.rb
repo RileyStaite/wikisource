@@ -9,4 +9,18 @@ RSpec.describe SourceController, type: :controller do
     end
   end
 
+  describe "Expect #get_url" do
+    it "return a string" do
+      url = controller.get_url
+      expect(url).to be_a_kind_of String
+    end
+  end
+
+  describe "Expect #get_sources" do
+    it "returns an array of strings" do
+      expect(controller.get_sources).to be_an_instance_of(Array)
+    end
+  end
+
+
 end
