@@ -10,13 +10,24 @@ class WikipediaScraper
         page_data = Nokogiri::HTML5(file)
         page_data.css('style').remove  
 
+        sources = []
         reflist = page_data.css('.reference-text')
         reflist.each do |reference| 
-            url = reference.css('a').attribute('href').value
             content = reference.text
+            url = reference.css('a').attribute('href').value
+
+            url.tr!('"', '')
+            content.tr!('"', '')
+
             p content
             p url
+            #sources = Hash[
+             #   *url.each().map { |a|
+               #     a.url
+               # }.flatten
+          #  ]
         end
+        # return sources
     end
 end
 
