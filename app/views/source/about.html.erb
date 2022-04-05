@@ -1,3 +1,16 @@
+<%= stylesheet_link_tag "application" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport"
+      content="width=device-width, 
+               initial-scale=1.0" />
+<title>About Sourcely</title>
+</head>
+
 <%= render 'layouts/navbar' %>
 <body>
 <div class="container-fluid col-md-10" style="background-color:#eaf3ff">
@@ -6,14 +19,12 @@
     </div>
     <div class="col-lg-16">
         <p>
-            Our customers want a tool that parses the sources at the bottom of a Wikipedia page. The application then creates a table containing a list of sources with information and links next to each source. The customers want the ability to click a link next to a source in the list and navigate to the location(s) on the Wikipedia page that the specific source is referring to. The customers also want the sources to be categorized by Wikipedia header type. For example, “Early Life” is a common header on historical figure or celebrity Wikipedia pages. Sources used under this header should have “Early Life” next to them. The customers also expressed interest in being able to sort the list of sources by level of credibility and/or the type of source - for example, blog, academic paper, article, etc. Both features may be difficult or impossible to effectively implement. The option to re-sort the source list may be required so that users with slightly different use-cases can sort the list of sources by relevant factors.
-        </p>
+            Our customers want a tool that parses the sources at the bottom of a Wikipedia page. We're working on adding the ability to save sources by using devise accounts. We're also cleaning up our parser and overall site layout.</p>
         <p>
             The tool should be minimalist in design and easy to use. The front page should have a large search bar to paste a Wikipedia link in. The next page should be a sortable table containing a list of sources from the user’s chosen Wikipedia article. Our primary users will be students and teachers. Our primary stakeholders could be anyone creating content sourced by Wikipedia articles, students, teachers, and schools/universities all as clients. The customers proposing the tool are also key stakeholders, as well as our team of developers. The proposed tool is not a citation machine. The proposed tool’s intended use case is to create a list of sources from the Wikipedia page, which can be visited and later cited - if used by the user. Theoretically, the tool should eliminate the need for parsing through Wikipedia sources.
         </p>
     </div>
         <footer class="container">
-    <p class="float-right"><a href="#">Back to top</a></p>
-    <p class="float-left"><a href="home">Home</a></p>
+    <div class="d-flex justify-content-center"><a href="/">Home</a></div>
     </footer>
 </body>

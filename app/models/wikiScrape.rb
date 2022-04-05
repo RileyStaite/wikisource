@@ -31,7 +31,7 @@ scrape.scrape_references
     # 4. Get wiki link from stream
 
     # After sprint 2-2
-    # 1. Possibly remove "retreived on" dates, also takes the form of (xyz, 20xx)
+    # 1. Possibly remove "retreived on" dates, also takes the form of (xyz, 20xx) (or store these for sorting)
     # 2. Add "..." and cut off long reference descriptions
     # 3. If reference links contain aria-label="Jump Up" inside reflist url, 
     #   Then remove div references but only the first one
