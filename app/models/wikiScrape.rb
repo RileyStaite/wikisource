@@ -8,15 +8,23 @@ class WikipediaScraper
         wiki_link = "https://en.wikipedia.org/wiki/Ruby_(programming_language)"
         file = URI.open(wiki_link)
         page_data = Nokogiri::HTML5(file)    
-        reflist_descriptions = page_data.css(".reference-text").text
+        reflist_links = page_data.css('.reference-text')
+        reflist_content = page_data.css('.reference-text')
+
+        puts reflist_content
+
+        reflist_links.each do |reference|
+            url = reference.css('a').attribute('href').value
+            content = reference.text
+            p content
+            p url
+        end
         #reflist_links = page_data.css(".references").css("a")
-
-        reference_list = []
-
-
+        #p page_data.xpath('//div[@class="reference-text"]/a').map { |link| link['href'] }
+        #reference_list = []
         #Testing
         #p page_data
-        p reflist_descriptions
+        #p reflist
         #p reflist_links
         #p file
     end
