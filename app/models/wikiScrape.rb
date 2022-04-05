@@ -16,16 +16,12 @@ class WikipediaScraper
             content = reference.text
             url = reference.css('a').attribute('href').value
 
+            # these remove all the backslashes
             url.tr!('"', '')
             content.tr!('"', '')
-
-            p content
-            p url
-            #sources = Hash[
-             #   *url.each().map { |a|
-               #     a.url
-               # }.flatten
-          #  ]
+            # test print
+            puts content
+            puts url
         end
         # return sources
     end
