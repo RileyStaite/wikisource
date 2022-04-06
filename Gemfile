@@ -16,6 +16,8 @@ gem 'nokogiri'
 
 gem 'open-uri' 
 
+gem  'wikipedia-client'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
 end
