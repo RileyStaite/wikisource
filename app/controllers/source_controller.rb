@@ -1,6 +1,5 @@
 class SourceController < ApplicationController
   def index
-    @link = params["search"]
     if(params["search"] == nil)
       params["search"] = "Search"
     end
@@ -9,8 +8,8 @@ class SourceController < ApplicationController
   def home
     #the views would work best if this sources instance variable was a hash
     @link = params["search"]
-    @sources = Reference.scrape_references(params["search"])
-    @page = Wikipedia.find(params["search"])
+    @sources = Reference.scrape_references(@link)
+    @page = Wikipedia.find(@link)
     if @sources[:status] == :completed && @sources[:error].nil?
       flash.now[:notice] = "Successfully scraped url"
     else

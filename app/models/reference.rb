@@ -1,6 +1,12 @@
 class Reference < ActiveRecord::Base
     validates_presence_of :url
 
+    def initialize(url)
+      @url = url
+    end
+
+    attr_accessor :url
+
     self.abstract_class = true
 
     def self.parse (url)
@@ -23,7 +29,7 @@ class Reference < ActiveRecord::Base
     end
 
     def self.scrape_references (wiki_link)
-      file = URI.open(wiki_link)
+      file = URI.open(@url)
       page_data = Nokogiri::HTML5(file)
       page_data.css('style').remove # Removes a style glitch inside reference classes on some wiki pages by mediawiki api
       reflist = page_data.css('.reference-text') # Only grabs data from class 'reference-text'
