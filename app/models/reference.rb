@@ -1,7 +1,7 @@
 class Reference < ActiveRecord::Base
     validates_presence_of :url
 
-    self.abstract_class = true
+   self.abstract_class = true
 
     def self.parse (url)
       link = URI.open(url)
