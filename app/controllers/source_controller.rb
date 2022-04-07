@@ -7,6 +7,7 @@ class SourceController < ApplicationController
 
   def home
     #the views would work best if this sources instance variable was a hash
+    @link = params["search"]
     @sources = Reference.scrape_references(params["search"])
     @page = Wikipedia.find(params["search"])
     if @sources[:status] == :completed && @sources[:error].nil?
