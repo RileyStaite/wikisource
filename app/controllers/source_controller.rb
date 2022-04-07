@@ -1,5 +1,6 @@
 class SourceController < ApplicationController
   def index
+    @link = params["search"]
     if(params["search"] == nil)
       params["search"] = "Search"
     end

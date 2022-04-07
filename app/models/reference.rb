@@ -33,11 +33,18 @@ class Reference < ActiveRecord::Base
       source_hash = [] # info is key, link is data
       i = 0
 
+
+
       reflist.each do |reference| 
           content = reference.text
-          url = reference.css('a').attribute('href').value
-          content.tr!('"', '') # remove backslashes
-          url.tr!('"', '') # remove backslashes
+					if (reference.css('a').attribute('href') != nil)
+	          url = reference.css('a').attribute('href').value
+	          content.tr!('"', '') # remove backslashes
+	          url.tr!('"', '') # remove backslashes
+					else 
+						url = reference.css('a').attribute('href')
+						content.tr!('"', '') # remove backslashes
+					end
 
           content_array[i] = content
           url_array[i] = url
