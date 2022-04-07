@@ -2,6 +2,7 @@ class SourceController < ApplicationController
   def index
     if(params["search"] == nil)
       params["search"] = "Search"
+    end
   end
 
   def home
@@ -15,7 +16,6 @@ class SourceController < ApplicationController
     end
     rescue StandardError => e
       flash.now[:alert] = "Error: #{e}"
-    end
   end 
   
   def about
