@@ -5,13 +5,13 @@
         <%= render 'layouts/navbar' %>
         <% if @sources %>
             <%= render 'layouts/sources-container' %>
+            <%= render 'layouts/saved' %>
         <% else %>
             <%= render 'layouts/faq' %>
         <% end %>
         <!-- <%= render 'layouts/saved' %> -->
     </body>
     <footer class="container">
-    <p class="float-right"><a href="#">Back to top</a></p>
-    <p class="float-left"><a href="about">About Us</a></p>
+    <div class="d-flex justify-content-center"><a href="/">Home</a></div>
     </footer>
 </html>
