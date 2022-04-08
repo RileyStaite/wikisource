@@ -10,39 +10,4 @@ section {
     height: 100vh;
     background: linear-gradient(180deg, #ffffff, #7c7c7c);
     animation: animate 20s linear infinite;
-    text-align: center;
   }
-  @keyframes animate {
-    0% {
-      filter: hue-rotate(0deg);
-    }
-
-    50% {
-      filter: hue-rotate(360deg);
-    }
-
-    100% {
-      filter: hue-rotate(0deg);
-    }
-  }
-
-  section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-top: 100vh solid transparent;
-    border-left: 100vh solid rgb(146, 146, 146);
-    opacity: 0.1;
-  }
-
-  section::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-top: 100vh solid transparent;
-    border-right: 100vh solid rgb(146, 146, 146);
-    opacity: 0.1;
-  }
-
