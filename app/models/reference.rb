@@ -33,8 +33,6 @@ class Reference < ActiveRecord::Base
       source_hash = [] # info is key, link is data
       i = 0
 
-
-
       reflist.each do |reference| 
           content = reference.text
 					if (reference.css('a').attribute('href') != nil)
@@ -55,7 +53,7 @@ class Reference < ActiveRecord::Base
           # puts url # testing
       end
       source_hash = Hash[content_array.zip(url_array)]
-      return source_hash # testing
+      # return source_hash
   end
 
       

@@ -1,5 +1,3 @@
-<%= stylesheet_link_tag "application" %>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,26 +12,22 @@
   <body>
     <section>
       <br>
-      <%= link_to "About Sourcely", source_about_path %>
+      <center>
+      <%= link_to "About", source_about_path %>
+      </center>
 
-      <br><br><br><br><br><br><br><br>
+      <br>
+      <center>
       <h1>Sourcely</h1>
+      </center>
+ 
       
-<div class="form">  
-<form>
-  <label for="form-search"></label>
-  <center>
-  <input type="text" id="form-search" placeholder="(Wikipedia link)">
-  </center>
-</form>
-</div>  
-<div class= "buttons">  
-<center>
-
-<a href="source/home"> <input type="submit" value="Get Sources" id="google_search"></a>
-
-</center>
-</div>
+      <%= render 'layouts/navbar' %>
+      <% if @sources %>
+      <%= render 'layouts/sources-container' %>
+      <%= render 'layouts/saved' %>
+      <br>
+      <% end %>  
 
 </section>
   </body>
