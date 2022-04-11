@@ -12,8 +12,8 @@
     
   </head>
 
-  <body>
-    <section>
+  <body class = "section">
+    <div class = "container-fluid">
       <br>
       <center>
       <%= link_to "About", source_about_path %>
@@ -26,11 +26,11 @@
  
       <%= render 'layouts/navbar' %>
       <% if @sources %>
-      <%= render 'layouts/sources-container' %>
-      <%= render 'layouts/saved' %>
-      <br>
+        <%= render 'layouts/sources-container' %>
+        <%= render 'layouts/saved' %>
+        <br>
       <% end %>  
 
-</section>
+    </div>
   </body>
 </html>
