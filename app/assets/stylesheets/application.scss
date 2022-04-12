@@ -18,6 +18,10 @@ body.section {
     left: 0;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(180deg, #ffffff, #7c7c7c);
+    background: linear-gradient(180deg, #eeeeee, #afafaf);
     animation: animate 20s linear infinite;
   }
+
+  html {
+    scroll-behavior: smooth;
+   }

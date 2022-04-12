@@ -16,8 +16,14 @@
     <div class = "container-fluid">
       <%= render 'layouts/navbar' %>
       <% if @sources %>
+          <center>
+          <a href="#bottom">Scroll to Bottom</a>
+          </center>
           <%= render 'layouts/sources-container' %>
           <%= render 'layouts/saved' %>
+          <center>
+          <a href="#top">Scroll to Top</a>
+          </center>
       <% end %>
     </div>
     <br>
