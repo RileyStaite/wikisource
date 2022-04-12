@@ -7,7 +7,7 @@ ruby '2.7.0'
 gem 'rails', '~> 5.2.6'
 
 gem 'cucumber'
-
+gem 'devise'
 gem 'simplecov', require: false, group: :test
 
 gem 'httparty'
