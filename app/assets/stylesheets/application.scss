@@ -17,7 +17,7 @@ body.section {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(180deg, #ffffff, #7c7c7c);
     animation: animate 20s linear infinite;
   }
