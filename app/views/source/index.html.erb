@@ -7,27 +7,19 @@
     <meta name="viewport"
           content="width=device-width, 
                    initial-scale=1.0" />
-                  
+
     <title>Sourcely</title>
-    
   </head>
 
   <body class = "section">
     <div class = "container-fluid">
-    
-      <br>
-      <center>
-      <h1>Sourcely</h1>
-      </center>
-      <br>
- 
       <%= render 'layouts/navbar' %>
-      <% if @sources %>
-        <%= render 'layouts/sources-container' %>
-        <%= render 'layouts/saved' %>
-        <br>
-      <% end %>  
 
+      <% if @sources %>
+          <%= render 'layouts/sources-container' %>
+          <%= render 'layouts/saved' %>
+      <% end %>
+      <br>  
     </div>
-  </body>
+
 </html>

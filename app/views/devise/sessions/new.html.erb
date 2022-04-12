@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" src="application.css">
+<title>Sign Up</title>
+</head>
+
+<body class = "section">
+<%= render 'layouts/navbar_not_index' %>
+<center>
+<div class = "container-fluid">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -24,3 +35,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</center>
+</div>
+</html>
