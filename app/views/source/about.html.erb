@@ -1,6 +1,5 @@
-<%= stylesheet_link_tag "application" %>
-
 <!DOCTYPE html>
+<%= stylesheet_link_tag "application" %>
 <html lang="en">
 
 <head>
@@ -15,7 +14,8 @@
 <div class = "container-fluid">
 <%= render 'layouts/navbar_not_index' %>
 <div class="container-fluid col-md-10" style="background-color:#eaf3ff">
-    <div class="col-lg-5">
+    <div class="col-lg-20">
+    <br>
         <h1>About Sourcely</h1>
     </div>
     <div class="col-lg-16">
@@ -30,6 +30,8 @@
         <p>
             -Downloading saved sources.</p>
         <p>
+            -Shortening summaries of Wikipedia pages.</p>
+        <p>
             -Tweaking the look of the application.</p>
         <p>
             -Tightening the parsing algorithm.</p>
@@ -38,6 +40,9 @@
 
     <footer class="container">
     <div class="d-flex justify-content-center"><%= link_to "Start Searching!", source_index_path %></div>
+    <br>
     </footer>
+    </div>
+    </div>
     </div>
 </html>

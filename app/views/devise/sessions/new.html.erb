@@ -1,11 +1,17 @@
 <!DOCTYPE html>
+<%= stylesheet_link_tag "application" %>
+<html lang="en">
 
 <head>
-<link rel="stylesheet" src="application.css">
+<meta charset="UTF-8" />
+<meta name="viewport"
+      content="width=device-width, 
+               initial-scale=1.0" />
 <title>Sign Up</title>
 </head>
 
 <body class = "section">
+<div class = "container-fluid">
 <%= render 'layouts/navbar_not_index' %>
 <center>
 <div class = "container-fluid">
@@ -36,5 +42,6 @@
 
 <%= render "devise/shared/links" %>
 </center>
+</div>
 </div>
 </html>
