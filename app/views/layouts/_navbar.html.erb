@@ -1,11 +1,11 @@
 <!-- Fixed navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
 
   <a class="navbar-brand" href="#">Sourcely</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <% if user_signed_in? %>
       <li class="nav-item">
@@ -18,6 +18,9 @@
       <% end %>
       <li class="nav-item">
         <%= link_to 'Sign in' , new_user_session_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+      <%= link_to 'About' , source_about_path, class: 'nav-link' %>
       </li>
 
     </ul>
