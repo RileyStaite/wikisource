@@ -1,6 +1,5 @@
-<%= stylesheet_link_tag "application" %>
-
 <!DOCTYPE html>
+<%= stylesheet_link_tag "application" %>
 <html lang="en">
 
 <head>
@@ -11,20 +10,39 @@
 <title>About Sourcely</title>
 </head>
 
-<%= render 'layouts/navbar' %>
-<body>
+<body class = "section">
+<div class = "container-fluid">
+<%= render 'layouts/navbar_not_index' %>
 <div class="container-fluid col-md-10" style="background-color:#eaf3ff">
-    <div class="col-lg-5">
+    <div class="col-lg-20">
+    <br>
         <h1>About Sourcely</h1>
     </div>
     <div class="col-lg-16">
         <p>
-            Our customers want a tool that parses the sources at the bottom of a Wikipedia page. We're working on adding the ability to save sources by using devise accounts. We're also cleaning up our parser and overall site layout.</p>
+            Sourcely is a tool that allows anyone to acquire a list of references from any Wikipedia page!</p>
         <p>
-            The tool should be minimalist in design and easy to use. The front page should have a large search bar to paste a Wikipedia link in. The next page should be a sortable table containing a list of sources from the user’s chosen Wikipedia article. Our primary users will be students and teachers. Our primary stakeholders could be anyone creating content sourced by Wikipedia articles, students, teachers, and schools/universities all as clients. The customers proposing the tool are also key stakeholders, as well as our team of developers. The proposed tool is not a citation machine. The proposed tool’s intended use case is to create a list of sources from the Wikipedia page, which can be visited and later cited - if used by the user. Theoretically, the tool should eliminate the need for parsing through Wikipedia sources.
-        </p>
+            Our goal is to create a minimalist tool that's easy to use. The purpose of Sourcely is to help people research topics, using Wikipedia as their starting point. </p>
+        <p>
+            Our future tasks include:</p>
+        <p>
+            -Adding accounts and saving sources.</p>
+        <p>
+            -Downloading saved sources.</p>
+        <p>
+            -Shortening summaries of Wikipedia pages.</p>
+        <p>
+            -Tweaking the look of the application.</p>
+        <p>
+            -Tightening the parsing algorithm.</p>
     </div>
-        <footer class="container">
-    <div class="d-flex justify-content-center"><%= link_to "Get Searching", source_index_path %></div>
+
+
+    <footer class="container">
+    <div class="d-flex justify-content-center"><%= link_to "Start Searching!", source_index_path %></div>
+    <br>
     </footer>
-</body>
+    </div>
+    </div>
+    </div>
+</html>

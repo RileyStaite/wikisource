@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,27 +6,27 @@
     <meta name="viewport"
           content="width=device-width, 
                    initial-scale=1.0" />
-                  
-    <title>Sourcely</title>
-    
+
+    <% if @sources %>
+    <title><%= @page.title %> Sources </title>
+    <% end %>
   </head>
 
   <body class = "section">
+  <div id="top">
+  </div>
     <div class = "container-fluid">
-    
-      <br>
-      <center>
-      <h1>Sourcely</h1>
-      </center>
-      <br>
- 
       <%= render 'layouts/navbar' %>
       <% if @sources %>
-        <%= render 'layouts/sources-container' %>
-        <%= render 'layouts/saved' %>
-        <br>
-      <% end %>  
-
+          <center>
+          <a href="#bottom">Scroll to Bottom</a>
+          </center>
+          <%= render 'layouts/sources-container' %>
+          <%= render 'layouts/saved' %>
+          <center>
+          <a href="#top">Scroll to Top</a>
+          </center>
+      <% end %>
     </div>
-  </body>
+    <br>
 </html>

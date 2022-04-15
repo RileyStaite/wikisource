@@ -22,10 +22,12 @@
       <%= link_to 'Sign in' , new_user_session_path, class: 'nav-link' %>
       </li>
       <% end %>
+
       <li class="nav-item">
       <%= link_to 'Saved' , source_saved_path, class: 'nav-link' %>
       </li>
-
+      
+      
 
     </ul>
   </div>
@@ -37,22 +39,14 @@
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <br> <br> 
+  
   <nav class="navbar navbar-light">
   <a class="navbar-brand"></a>
-  <form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="Wikipedia URL" aria-label="Search" id="search" name="search">
-      <button type="submit" class="btn btn-outline-secondary">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-        </svg>
-      </button>
-  </form>
+
+  
   <form class="form-inline">
     <a class="navbar-brand mr-auto" href="#">
+
     </a>
   </form>
 </nav>
-<center>
-<a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank">Wikipedia</a> | <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random</a>
-</center>
