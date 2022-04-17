@@ -4,6 +4,7 @@ class Reference < ActiveRecord::Base
    self.abstract_class = true
 
     def self.parse (url)
+      raise "Nil URL" if url.nil?
       link = URI.open(url)
       doc = Nokogiri.HTML5(link)
       sources = []
