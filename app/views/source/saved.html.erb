@@ -7,18 +7,43 @@
 <meta name="viewport"
       content="width=device-width, 
                initial-scale=1.0" />
-<title>Sign In</title>
+<title>Sourcely - Saved</title>
 </head>
 
 <body class = "section">
 <div class = "container-fluid">
 <%= render 'layouts/navbar_not_index' %>
 <center>
-<div class = "container-fluid">
-<h2>(Saved Sources Here)</h2>
-
-
+      <div class = "container-fluid">
+      <h2>(Saved Sources Here - Test URLS from Ruby on Rails Wikipedia Article)</h2>
+      </div>
+      <i class="bi bi-download"></i>
 </center>
+<div class="container-fluid col-md-10" style="background-color:#eaf3ff"> 
+<br>
+<% @saved_sources.each do |saved| %>
+      <span>
+            <div class="row">
+                  <div class="col-9">
+                  <%= link_to saved, saved, target: :_blank %>   
+                  </div>
+                  <div class="col">
+                  <%= button_to "download", {:controller => :source, :action => :download}, params:{output: saved}, class: 'btn btn-outline-success btn-sm' %> 
+                  </div>
+                  <div class="col">
+                  <%= button_to "delete", {:controller => :source, :action => :delete}, params:{output: saved}, class: 'btn btn-outline-danger btn-sm' %>
+                  </div>
+            </div>
+      </span>
+      <br>
+      <br>
+<% end %>
 </div>
-</div>
+<hr>
+      <div class="col-md-12 text-center mb-1">
+            <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @saved_sources}, class: 'btn btn-success' %>
+      </div>
+
+      <br>
+      <br>
 </html>
