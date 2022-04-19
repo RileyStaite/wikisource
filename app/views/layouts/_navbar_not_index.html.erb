@@ -12,6 +12,9 @@
       </li>
       <% if user_signed_in? %>
       <li class="nav-item">
+      <%= link_to 'Saved' , source_saved_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
       <%= link_to 'Sign out' , destroy_user_session_path, method: :delete, class: 'nav-link' %>
       </li>
       <% else %>
@@ -23,9 +26,7 @@
       </li>
       <% end %>
 
-      <li class="nav-item">
-      <%= link_to 'Saved' , source_saved_path, class: 'nav-link' %>
-      </li>
+
       
       
 
