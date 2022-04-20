@@ -1,1 +1,1 @@
-http://guides.rubyonrails.org/getting_started.html#what-is-rails-questionmark
+http://weblog.rubyonrails.org/2009/3/16/rails-2-3-templates-engines-rack-metal-much-more
