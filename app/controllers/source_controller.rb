@@ -41,12 +41,20 @@ class SourceController < ApplicationController
     if params[:output]
       File.open("sourcely.txt", 'w') do |f|
         f.puts(params[:output])
-        return send_file(f)
-        sleep(5)
-        File.delete(f)
+        send_file(f)
       end
     end
   rescue Errno::ENOENT
+  end
+
+  # Downloading works now but the file isn't being deleted
+  # Ruby returns last statement of function 
+  # so it was returning the deleted file
+  # Will need to delete seperately or send_file from a different function
+  # If the name of the file is made dynmaic the file must be deleted.
+
+  def delete_file
+    File.delete(f)
   end
 
   def delete
