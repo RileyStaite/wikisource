@@ -15,7 +15,7 @@
 <%= render 'layouts/navbar_not_index' %>
 <center>
       <div class = "container-fluid">
-      <h2>(Saved Sources Here - Test URLS from Ruby on Rails Wikipedia Article)</h2>
+      <h2>My Saved Sources</h2>
       </div>
       <i class="bi bi-download"></i>
 </center>
@@ -24,7 +24,7 @@
 <div class="col-md-12 text-center mb-1">
 <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @saved_sources}, class: 'btn btn-success' %>
 <br>
-<a href="#bottom">Scroll to Bottom</a>
+
 </div>
 <br>
 <% @saved_sources.each do |saved| %>
@@ -44,12 +44,6 @@
       <br>
       <br>
 <% end %>
-<div class="col-md-12 text-center mb-1">
-<%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @saved_sources}, class: 'btn btn-success' %>
-<br>
-<div id="bottom">
-<a href="#top">Scroll to Top</a>
-</div>
 <br>
 </div>
 </div>
