@@ -1,12 +1,18 @@
 class SourceController < ApplicationController
   def index
     if(params["search"] == nil)
-      params["search"] = "Search"
+      params["search"] = ""
     end
     #the views would work best if this sources instance variable was a hash
     @link = params["search"]
-    @sources = Reference.scrape_references(params["search"])
-    @page = Wikipedia.find(params["search"])
+    if valid_url?(@link) == true
+      @sources = Reference.scrape_references(params["search"])
+      @page = Wikipedia.find(params["search"])
+    else
+      @page = Wikipedia.find(params["search"])
+      @link = @page.fullurl
+      @sources = Reference.scrape_references(@link)
+    end
     if @sources[:status] == :completed && @sources[:error].nil?
       flash.now[:notice] = "Successfully scraped url"
     else
@@ -14,6 +20,12 @@ class SourceController < ApplicationController
     end
     rescue StandardError => e
       flash.now[:alert] = "Error: #{e}" 
+  end
+
+  def valid_url?(url)
+    return false if url.include?("<script")
+    url_regexp = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix
+    url =~ url_regexp ? true : false
   end
 
   def about
