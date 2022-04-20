@@ -22,6 +22,10 @@ body.section {
     animation: animate 20s linear infinite;
   }
 
+  #linkcolor a:visited {
+    color: rgb(60, 36, 168);
+  }
+
   html {
     scroll-behavior: smooth;
    }

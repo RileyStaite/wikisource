@@ -4,8 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  attr_accessor :sourcelist
+  validates_presence_of :sourcelist, presence: true
+
   def self.save_a_source(new_source,sourcelist)
     sourcelist.append(new_source)
+    return(sourcelist)
   end
 
   def self.show_sources(saved_sourcelist)

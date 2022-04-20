@@ -15,17 +15,17 @@ class SourceController < ApplicationController
     rescue StandardError => e
       flash.now[:alert] = "Error: #{e}" 
   end
-  
+
   def about
   end 
 
   # still must save in model
   def saved
-    sourcelist = ["https://sourcely-group4.herokuapp.com/"]
+    @sourcelist = ["https://sourcely-group4.herokuapp.com/"]
     if params[:output]
-    @saved_sources = User.save_a_source(params[:output], sourcelist)
-    end
-    @saved_sources = User.show_sources(sourcelist)
+      @saved_sources = User.save_a_source(params[:output], @sourcelist)
+      end
+    @saved_sources = User.show_sources(@sourcelist)
   end
 
   def download
@@ -39,13 +39,12 @@ class SourceController < ApplicationController
   end
 
   # Downloading works now but the file isn't being deleted
-  # Ruby returns last statement of function 
+  # Ruby returns the delete if it's left after send_file 
   # so it was returning the deleted file
   # Will need to delete seperately or send_file from a different function
   # If the name of the file is made dynmaic the file must be deleted.
-  def delete_file
-    File.delete(f)
-  end
+  # This is how file deletion would work if time permitted adding it:
+  # https://stackoverflow.com/questions/8530379/delete-the-file-from-the-server-after-the-download-is-completed
 
   def delete
     if params[:output]

@@ -6,7 +6,7 @@
     <br><h2><strong><%= @page.title %></strong></h2><hr>
     <h5> Summary </h5>
     <p> <%= @page.summary %> </p> <hr> <br>
-
+    <div id="linkcolor">
     <% @sources.each do |description, link| %>
         <div class="col-lg-16">
         <span>  <%= link_to description, link, target: :_blank %> </span> 
