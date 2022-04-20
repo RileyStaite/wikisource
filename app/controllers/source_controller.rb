@@ -41,7 +41,7 @@ class SourceController < ApplicationController
     if params[:output]
       File.open("sourcely.txt", 'w') do |f|
         f.puts(params[:output])
-        send_file(f)
+        return send_file(f)
         sleep(5)
         File.delete(f)
       end
