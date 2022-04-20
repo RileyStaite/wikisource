@@ -1,1 +1,1 @@
-http://weblog.rubyonrails.org/2009/3/16/rails-2-3-templates-engines-rack-metal-much-more
+https://www.se-radio.net/2021/08/episode-471-jason-meller-on-choosing-the-right-tech-stack-for-a-greenfield-project/
