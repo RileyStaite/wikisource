@@ -14,7 +14,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Rememberable
       t.datetime :remember_created_at
       # This needs to be an array instead. Couldn't get an array to migrate
-      t.string :saved_sourcelist, default: "https://sourcely-group4.herokuapp.com/"
+      # t.string :saved_sourcelist, default: "https://sourcely-group4.herokuapp.com/"
       
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
