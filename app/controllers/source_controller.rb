@@ -12,6 +12,9 @@ class SourceController < ApplicationController
       @page = Wikipedia.find(params["search"])
       @link = @page.fullurl
       @sources = Reference.scrape_references(@link)
+        if @sources == nil
+          # Handle dismbiguation in future
+        end
     end
     if @sources[:status] == :completed && @sources[:error].nil?
       flash.now[:notice] = "Successfully scraped url"
