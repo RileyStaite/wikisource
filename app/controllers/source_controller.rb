@@ -3,6 +3,7 @@ class SourceController < ApplicationController
     if(params["search"] == nil)
       params["search"] = ""
     end
+    #the views would work best if this sources instance variable was a hash
     @link = params["search"]
     if valid_url?(@link) == true
       @sources = Reference.scrape_references(params["search"])
@@ -33,13 +34,13 @@ class SourceController < ApplicationController
   def about
   end 
 
+  # still must save in model
   def saved
     @sourcelist = ["https://sourcely-group4.herokuapp.com/"]
-  # @sourcelist = User.saved_sourcelist
-   # Should grab user's sourcelist
     if params[:saveditem]
-      @sourcelist.append(params[:saveditem])
-    end
+      @saved_sources = User.save_a_source(params[:saveditem], @sourcelist)
+      end
+    @saved_sources = User.show_sources(@sourcelist)
   end
 
   def download
