@@ -22,12 +22,12 @@
 <div class="container-fluid col-md-10" style="background-color:#eaf3ff"> 
 <br>
 <div class="col-md-12 text-center mb-1">
-<%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @saved_sources}, class: 'btn btn-success' %>
+<%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sourcelist}, class: 'btn btn-success' %>
 <br>
 
 </div>
 <br>
-<% @saved_sources.each do |saved| %>
+<% @sourcelist.each do |saved| %>
       <span>                  
       <div id="linkcolor">
             <div class="row">

@@ -9,15 +9,14 @@
     <div id="linkcolor">
     <% @sources.each do |description, link| %>
         <div class="col-lg-16">
-        <span>  <%= link_to description, link, target: :_blank %> </span> 
-        <% if user_signed_in? %>
-        <hr>
-        <%= button_to "Save", {:controller => :source, :action => :saved}, params:{output: link}, class: 'btn btn-outline-success btn-sm float-right' %> 
-        </button> 
-<% end %>
-</div>
-<br>
-<% end %>
+            <span>  <%= link_to description, link, target: :_blank %> </span> 
+            <% if user_signed_in? %>
+                <%= button_to "Save", {:controller => :source, :action => :saved}, params:{saveditem: link}, class: 'btn btn-outline-success btn-sm' %>
+                </button> 
+                <hr>
+            <% end %>
+        </div>
+    <% end %>
 <div id="bottom">
 </div>
 </div>

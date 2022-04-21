@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2022_04_10_070348) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    # This needs to be an array but I can't figure it out
+    t.string "saved_sourcelist", default: "https://sourcely-group4.herokuapp.com/"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

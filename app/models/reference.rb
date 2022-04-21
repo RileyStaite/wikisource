@@ -3,26 +3,6 @@ class Reference < ActiveRecord::Base
 
    self.abstract_class = true
 
-    def self.parse (url)
-      raise "Nil URL" if url.nil?
-      link = URI.open(url)
-      doc = Nokogiri.HTML5(link)
-      sources = []
-      ref_list = []
-      doc.xpath("//ol[@class='references']").each do |ref|
-        ref_list += ref.xpath('//a[@rel="nofollow"]')
-        sources = Hash[
-        *ref_list.each().map { |a| 
-            [
-              a.content,
-              a['href']
-            ]
-          }.flatten
-        ]
-        end
-        return sources
-    end
-
     def self.scrape_references (wiki_link)
       raise "Nil URL" if wiki_link.nil?
       file = URI.open(wiki_link)
