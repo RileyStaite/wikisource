@@ -5,7 +5,7 @@
     <div class="container-fluid col-md-10" style="background-color:#eaf3ff"> 
     <br><h2><strong><%= @page.title %></strong></h2><hr>
     <h5> Summary </h5>
-    <p> <%= @page.summary %> </p> <hr> <br>
+    <p> <%= @page.summary %> </p> <hr>     <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %> <hr>
     <div id="linkcolor">
     <% @sources.each do |description, link| %>
         <div class="col-lg-16">
@@ -13,13 +13,12 @@
             <% if user_signed_in? %>
                 <%= button_to "Save", {:controller => :source, :action => :saved}, params:{saveditem: link}, class: 'btn btn-outline-success btn-sm' %>
                 </button> 
-                <hr>
             <% end %>
+            <hr>
         </div>
     <% end %>
-    <br>
     <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %>
-    <br>
+    <hr>
 <div id="bottom">
 </div>
 </div>
