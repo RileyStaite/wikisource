@@ -1,64 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-    <br>
-    <body>
-    <% if user_signed_in? %>
-    <div class="container-fluid col-md-10" style="background-color:#eaf3ff"> 
-    <br><h2><strong><%= @page.title %></strong></h2><hr>
-    <h5> Summary </h5>
-    <p> <%= @page.summary %> </p> <hr>     <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %> <hr>
-    <div id="linkcolor">
-    <% @sources.each do |description, link| %>
-        <div class="col-lg-16">
-            <span>  <%= link_to description, link, target: :_blank %> </span> 
-            
-                <%= button_to "Save", {:controller => :source, :action => :saved}, params:{saveditem: link}, class: 'btn btn-outline-success btn-sm' %>
-                </button> 
-            
-            <hr>
-        </div>
-    <% end %>
-    <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %>
-    <hr>
-<div id="bottom">
-</div>
-</div>
-</div>
-</body>
-<center>
-<br>
-<a href="#top">Scroll Up</a>
-</center>
-</html>
-<% else %>
-<!DOCTYPE html>
-<html lang="en">
-    <br>
-    <body>
-    <div class="container-fluid col-md-10" style="background-color:#eaf3ff"> 
-    <br><h2><strong><%= @page.title %></strong></h2><hr>
-    <h5> Summary </h5>
-    <p> <%= @page.summary %> </p> 
-    <div id="linkcolor">
-    <% @sources.each do |description, link| %>
-        <div class="col-lg-16">
-            <span>  <%= link_to description, link, target: :_blank %> </span> 
-            
-                
-            
-            <hr>
-        </div>
-    <% end %>
-    
-<div id="bottom">
-</div>
-</div>
-</div>
-</body>
-<center>
-<br>
-<a href="#top">Scroll Up</a>
-</center>
-</html>
-<% end %>
-
+	<html lang="en">
+	    <br>
+	    <body>
+	    <div class="container-fluid col-md-10" style="background-color:#eaf3ff"> 
+	    <br><h2><strong><%= @page.title %></strong></h2><hr>
+	    <h5> Summary </h5>
+	    <p> <%= @page.summary %> </p> <hr>     <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %> <hr>
+	    <div id="linkcolor">
+	    <% @sources.each do |description, link| %>
+	        <div class="col-lg-16">
+	            <span>  <%= link_to description, link, target: :_blank %> </span> 
+	            <% if user_signed_in? %>
+	                <%= button_to "Save", {:controller => :source, :action => :saved}, params:{saveditem: link}, class: 'btn btn-outline-success btn-sm' %>
+	                </button> 
+	            <% end %>
+	            <hr>
+	        </div>
+	    <% end %>
+	    <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %>
+	    <hr>
+	<div id="bottom">
+	</div>
+	</div>
+	</div>
+	</body>
+	<center>
+	<br>
+	<a href="#top">Scroll Up</a>
+	</center>
+	</html> 

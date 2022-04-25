@@ -42,7 +42,6 @@ class SourceController < ApplicationController
       end
     @saved_sources = User.show_sources(@sourcelist)
   end
-
   def download
     if params[:output]
       File.open("sourcely.txt", 'w') do |f|
