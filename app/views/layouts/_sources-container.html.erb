@@ -8,15 +8,20 @@
 	    <p> <%= @page.summary %> </p> <hr>     <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %> <hr>
 	    <div id="linkcolor">
 	    <% @sources.each do |description, link| %>
+		<% @sources.each do |saved| %>
 	        <div class="col-lg-16">
 	            <span>  <%= link_to description, link, target: :_blank %> </span> 
 	            <% if user_signed_in? %>
 	                <%= button_to "Save", {:controller => :source, :action => :saved}, params:{saveditem: link}, class: 'btn btn-outline-success btn-sm' %>
 	                </button> 
+					<br>
+					<%= button_to "Download", {:controller => :source, :action => :download}, params:{output: saved}, class: 'btn btn-outline-success btn-sm' %> 
+					</button>
 	            <% end %>
 	            <hr>
 	        </div>
 	    <% end %>
+		<% end %>
 	    <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %>
 	    <hr>
 	<div id="bottom">
