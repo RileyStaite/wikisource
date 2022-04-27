@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-	<html lang="en">
-	    <br>
-	    <body>
-	    <div class="container-fluid col-md-10" style="background-color:#eaf3ff"> 
-	    <br><h2><strong><%= @page.title %></strong></h2><hr>
-	    <h5> Summary </h5>
-	    <p> <%= @page.summary %> </p> <hr>     <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %> <hr>
-	    <div id="linkcolor">
-	    <% @sources.each do |description,link,saved| %>
-
-	        <div class="col-lg-16">
-	            <span>  <%= link_to description, link, target: :_blank %> </span> 
-	            <% if user_signed_in? %>
-	                <%= button_to "Save", {:controller => :source, :action => :saved}, params:{saveditem: link}, class: 'btn btn-outline-success btn-sm' %>
-	                </button> 
-				
-					<%= button_to "Download", {:controller => :source, :action => :download}, params:{output: saved}, class: 'btn btn-outline-success btn-sm' %> 
-					</button>
-				
-                 
-	            
-	            <hr>
-		<% end %>
-	        </div>
-	    <% end %>
-	    <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %>
-	    <hr>
-	<div id="bottom">
-	</div>
-	</div>
-	</div>
-	</body>
+<html lang="en">
+    <br>
+    <body>
+        <div class="container-fluid col-md-10" style="background-color:#eaf3ff"> 
+            <br><h2><strong><%= @page.title %></strong></h2><hr>
+            <h5> Summary </h5>
+            <p> <%= @page.summary %> </p> <hr>     
+            <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %> <hr>
+            <div class="row" id="linkcolor">
+	            <% @sources.each do |description,link,saved| %>
+                    <div class="col-10"  style="padding: 10px">
+                        <%= link_to description, link, target: :_blank %> 
+                    </div>
+                    <% if user_signed_in? %>
+                        <div class="col" style="padding: 10px">
+                            <%= button_to "Save", {:controller => :source, :action => :saved}, params:{saveditem: link}, class: 'btn btn-outline-primary btn-sm' %>				
+                            <%= button_to "Download", {:controller => :source, :action => :download}, params:{output: saved}, class: 'btn btn-outline-primary btn-sm' %> 
+                        </div>
+                    <% end %>
+                <hr> 
+                <% end %>
+                </div>
+                <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %>
+                <hr>
+                <div id="bottom">
+                </div>
+            
+        </div>
+    </body>
 	<center>
-	<br>
-	<a href="#top">Scroll Up</a>
+	    <br>
+	    <a href="#top">Scroll Up</a>
 	</center>
-	</html> 
+</html> 
