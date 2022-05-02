@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   get 'source/index'
   get 'source/saved'
   post 'source/download' => 'source#download'
-  post 'source/delete' => 'source#delete'
   post 'source/saved'
+  delete "source/delete", to: "source#delete", as: "delete"
 
-  post "source/:save", to: "source#saved", as: "saved"
+  post "source/:saved", to: "source#saved", as: "saved"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -38,7 +38,7 @@
             <%= button_to "Download", {:controller => :source, :action => :download}, params:{output: saved}, class: 'btn btn-outline-success btn-sm' %> 
             </div>
             <div class="col">
-            <%= button_to "Delete", {:controller => :source, :action => :delete}, params:{output: saved}, class: 'btn btn-outline-danger btn-sm' %>
+            <%= button_to "Delete", {:controller => :source, :action => delete}, params:{output: saved}, class: 'btn btn-outline-danger btn-sm' %>
             </div>
             </div>
       </span>
