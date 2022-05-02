@@ -27,19 +27,19 @@
 
 </div>
 <br>
-<% @sourcelist.each do |saved| %>
+<% @sourcelist.each do |Saved| %>
       <span>                  
       <div id="linkcolor">
             <div class="row">
-                  <div class="col-9">
-                  <%= link_to saved, saved, target: :_blank %>   
-                  </div>
-                  <div class="col">
-                  <%= button_to "Download", {:controller => :source, :action => :download}, params:{output: saved}, class: 'btn btn-outline-success btn-sm' %> 
-                  </div>
-                  <div class="col">
-                  <%= button_to "Delete", {:controller => :source, :action => :delete}, params:{output: saved}, class: 'btn btn-outline-danger btn-sm' %>
-                  </div>
+            <div class="col-9">
+            <%= link_to saved, saved, target: :_blank %>   
+            </div>
+            <div class="col">
+            <%= button_to "Download", {:controller => :source, :action => :download}, params:{output: saved}, class: 'btn btn-outline-success btn-sm' %> 
+            </div>
+            <div class="col">
+            <%= button_to "Delete", {:controller => :source, :action => :delete}, params:{output: saved}, class: 'btn btn-outline-danger btn-sm' %>
+            </div>
             </div>
       </span>
       <br>

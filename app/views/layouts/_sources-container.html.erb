@@ -15,7 +15,8 @@
                     <% if user_signed_in? %>
                         <div class="col" style="padding: 10px">
                             <%= button_to "Download", {:controller => :source, :action => :saved}, params:{saveditem: link}, class: 'btn btn-outline-primary btn-sm' %>				
-                            <%= button_to "Save", {:controller => :source, :action => :download}, params:{output: saved}, class: 'btn btn-outline-primary btn-sm' %> 
+                            <%= button_to "Save", {:controller => :source, :action => :saved}, params:{saved: link}, class: 'btn btn-outline-primary btn-sm' %>				
+
                         </div>
                     <% end %>
                 <hr> 
