@@ -33,12 +33,18 @@ class SourceController < ApplicationController
 
   def about
   end 
-
+#
   # still must save in model
   def saved
     @sourcelist = ["https://sourcely-group4.herokuapp.com/"]
     if params[:saveditem]
+  
       @saved_sources = User.save_a_source(params[:saveditem], @sourcelist)
+      @saved_sources=User.save_a_source(params[:saveditem],[:saveditem])
+      
+      
+
+
       end
     @saved_sources = User.show_sources(@sourcelist)
   end

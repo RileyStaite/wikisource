@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post 'source/saved'
   delete "source/delete", to: "source#delete", as: "delete"
 
-  post "source/:saved", to: "source#saved", as: "saved"
+  post "source/:saved", to: "source#saved", as: "save"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
