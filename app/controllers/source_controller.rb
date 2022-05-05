@@ -58,6 +58,28 @@ class SourceController < ApplicationController
   rescue Errno::ENOENT
   end
 
+
+  def download
+    if params[:output]
+      File.open("sourcely.txt", 'w') do |f|
+        f.puts(params[:output])
+        send_file(f)
+      end
+    end
+  rescue Errno::ENOENT
+    File.open("sourcely.txt", "r") do |fh|
+      while(line = fh.gets) != nil
+        if line.include?("params[:output]")
+          while(line = fh.gets) != nil
+            puts "\r\n"
+            break if line.include?(".")
+          end
+        end
+      end
+    end
+  end 
+ 
+
   # Downloading works now but the file isn't being deleted
   # Ruby returns the delete if it's left after send_file 
   # so it was returning the deleted file
