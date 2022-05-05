@@ -67,17 +67,8 @@ class SourceController < ApplicationController
       end
     end
   rescue Errno::ENOENT
-    File.open("sourcely.txt", "r") do |fh|
-      while(line = fh.gets) != nil
-        if line.include?("params[:output]")
-          while(line = fh.gets) != nil
-            puts "\r\n"
-            break if line.include?(".")
-          end
-        end
-      end
-    end
-  end 
+  end
+
  
 
   # Downloading works now but the file isn't being deleted
