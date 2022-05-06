@@ -21,11 +21,11 @@ render_views
       params = {"search" => ""}
 
       it "It runs" do
-        get :index, params
+        get :index
       end
 
       it "It renders index" do
-        get :index, params
+        get :index
         expect(subject).to render_template("source/index")
       end
     end
@@ -33,11 +33,11 @@ render_views
     describe "Given the UCCS wiki search" do
       params = {"search" => "https://en.wikipedia.org/wiki/University_of_Colorado_Colorado_Springs"}
       it "It runs" do
-        get :index, params
+        get :index
       end
 
       it "It renders index" do
-        get :index, params
+        get :index
         expect(subject).to render_template("source/index")
       end
     end
