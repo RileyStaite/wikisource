@@ -13,7 +13,7 @@
         </div> 
         <hr> 
             <div style="padding: 0px">
-            <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %>
+            <%= button_to "Download All", {:controller => :source, :action => :download_all}, params:{output: @sources}, class: 'btn btn-success' %>
             </div>
             <hr>
             <div id="linkcolor">
@@ -38,7 +38,7 @@
                     <hr>
                 <% end %>
             </div>
-            <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %>
+            <%= button_to "Download All", {:controller => :source, :action => :download_all}, params:{output: @sources}, class: 'btn btn-success' %>
             <hr>
             <div id="bottom">
             </div>

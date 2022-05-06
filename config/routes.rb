@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'source/index'
   get 'source/saved'
   post 'source/download' => 'source#download'
+  post 'source/download_all' => 'source#download_all'
   post 'source/saved'
   delete "source/delete", to: "source#delete", as: "delete"
 

@@ -41,13 +41,10 @@ class SourceController < ApplicationController
   
       @saved_sources = User.save_a_source(params[:saveditem], @sourcelist)
       @saved_sources=User.save_a_source(params[:saveditem],[:saveditem])
-      
-      
-
-
       end
     @saved_sources = User.show_sources(@sourcelist)
   end
+
   def download
     if params[:output]
       File.open("sourcely.txt", 'w') do |f|
@@ -58,11 +55,13 @@ class SourceController < ApplicationController
   rescue Errno::ENOENT
   end
 
-
-  def download
+  def download_all
     if params[:output]
       File.open("sourcely.txt", 'w') do |f|
         f.puts(params[:output])
+          temp = File.read(f)
+          replace = temp.to_s.gsub!(/\"/,"\n").tr('{}', '').gsub!(/\,/,"")
+          File.open("sourcely.txt", "w") {|f| f.puts replace }
         send_file(f)
       end
     end
