@@ -36,8 +36,6 @@ class Reference < ActiveRecord::Base
       end
       source_hash = Hash[content_array.zip(url_array)]
       # return source_hash
-  end
-
-      
+  end  
 end
   

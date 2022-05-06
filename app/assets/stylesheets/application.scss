@@ -29,3 +29,13 @@ body.section {
   html {
     scroll-behavior: smooth;
    }
+
+   .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .move-down {
+    display: flex;
+    align-self: center;
+  }
