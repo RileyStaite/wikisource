@@ -60,7 +60,12 @@ class SourceController < ApplicationController
       File.open("sourcely.txt", 'w') do |f|
         f.puts(params[:output])
           temp = File.read(f)
-          replace = temp.to_s.gsub!(/\"/,"\n").tr('{}', '').gsub!(/\,/,"")
+          # The last part of the below expression deletes all commas
+          # Ideally, we want to remove commas follwed by a newline or spaces
+          # That way we could preserve description commas
+          replace = temp.to_s.gsub!(/\"/,"\n")
+          replace = replace.to_s.tr('{}', '')
+          replace = replace.to_s.gsub!(/\,/,"")
           File.open("sourcely.txt", "w") {|f| f.puts replace }
         send_file(f)
       end
