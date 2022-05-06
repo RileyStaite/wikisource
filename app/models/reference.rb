@@ -18,27 +18,26 @@ class Reference < ActiveRecord::Base
 
       reflist.each do |reference| 
           content = reference.text
-            if (reference.css('a').attribute('href') != nil)
+          if (reference.css('a').attribute('href') != nil)
 	          url = reference.css('a').attribute('href').value
 	          content.tr!('"', '') # remove backslashes
 	          url.tr!('"', '') # remove backslashes
-					else 
+					else
 						url = reference.css('a').attribute('href')
 						content.tr!('"', '') # remove backslashes
 					end
 
-          # if (url.include? '/wiki/ISBN')
-            #break
-          #elseif (url.include? '#CITEREF')
-          # go to cite refs and cite here if possible
-          # else
-            content_array[i] = content
-            url_array[i] = url  
-            i += 1
-         # end 
+          content_array[i] = content.strip
+          url_array[i] = url  
+          i += 1
+
+          # I tried below but it only works for some pages, breaks others
+          #if (url.include? '/wiki/ISBN') etc
+          #elseif (url.include? '#CITEREF') etc
+          # link these citerefs to their links in the reflist that follows
       end
       source_hash = Hash[content_array.zip(url_array)]
       # return source_hash
-  end  
+  end 
 end
   

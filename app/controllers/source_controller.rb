@@ -55,6 +55,9 @@ class SourceController < ApplicationController
   rescue Errno::ENOENT
   end
 
+  # uccs wikipedia page is an example of a page that
+  # the download all formatting doesn't work on
+  # Works for most, there's a problem w/specific source lists
   def download_all
     if params[:output]
       File.open("sourcely.txt", 'w') do |f|
