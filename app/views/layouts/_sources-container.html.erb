@@ -3,14 +3,23 @@
     <br>
     <body>
         <div class="container-fluid col-md-10" style="background-color:#eaf3ff"> 
-            <br><h2><strong><%= @page.title %></strong></h2><hr>
+        <div style="padding: 0px">
+            <br><h2><strong><%= @page.title %></strong></h2>
+        </div>
+            <hr>
+        <div style="padding: 0px">
             <h5> Summary </h5>
-            <p> <%= @page.summary %> </p> <hr>     
-            <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %> <hr>
+            <p> <%= @page.summary %> </p>
+        </div> 
+        <hr> 
+            <div style="padding: 0px">
+            <%= button_to "Download All", {:controller => :source, :action => :download}, params:{output: @sources}, class: 'btn btn-success' %>
+            </div>
+            <hr>
             <div id="linkcolor">
 	            <% @sources.each do |description,link,saved| %>
                     <div class="flex-container">
-                        <div class="col-10"  style="padding: 10px">
+                        <div class="col"  style="padding: 0px">
                             <%= link_to description, link, target: :_blank %> 
                         </div>
                         <% if user_signed_in? %>
