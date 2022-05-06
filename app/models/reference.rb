@@ -8,6 +8,7 @@ class Reference < ActiveRecord::Base
       file = URI.open(wiki_link)
       page_data = Nokogiri::HTML5(file)
       page_data.css('style').remove # Removes a style glitch inside reference classes on some wiki pages by mediawiki api
+      page_data.css('.reflist-lower-alpha').remove # Remove cite notes
       reflist = page_data.css('.reference-text') # Only grabs data from class 'reference-text'
       
       content_array = [] # holds reference info
@@ -17,7 +18,7 @@ class Reference < ActiveRecord::Base
 
       reflist.each do |reference| 
           content = reference.text
-					if (reference.css('a').attribute('href') != nil)
+            if (reference.css('a').attribute('href') != nil)
 	          url = reference.css('a').attribute('href').value
 	          content.tr!('"', '') # remove backslashes
 	          url.tr!('"', '') # remove backslashes
@@ -26,13 +27,15 @@ class Reference < ActiveRecord::Base
 						content.tr!('"', '') # remove backslashes
 					end
 
-          content_array[i] = content
-          url_array[i] = url
-          # puts content_array[i] # testing
-          # puts url_array[i] # testing
-          i += 1
-          # puts content # testing
-          # puts url # testing
+          # if (url.include? '/wiki/ISBN')
+            #break
+          #elseif (url.include? '#CITEREF')
+          # go to cite refs and cite here if possible
+          # else
+            content_array[i] = content
+            url_array[i] = url  
+            i += 1
+         # end 
       end
       source_hash = Hash[content_array.zip(url_array)]
       # return source_hash
